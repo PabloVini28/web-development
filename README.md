@@ -1,4 +1,4 @@
-# Web Devolopment 💻🌐
+# Web Development 💻🌐
 
 ## Technologies and tools
   - HTML5  ![HTML](https://img.shields.io/badge/HTML-FF4500?style=for-the-badge&logo=html5&logoColor=white)
