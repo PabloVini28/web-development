@@ -1,0 +1,68 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    display: flex;
+    padding: 20px;
+    background-color: rgb(143, 117, 83);
+    color: white;
+}
+
+header nav{
+    margin-left: auto;
+}
+
+header nav ul{
+
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+a{
+    font-size: 20px;
+    text-decoration: inline;
+    color: white;
+}
+
+main {
+    display: flex;
+
+    background-color: antiquewhite;
+}
+
+article{
+    margin: 5px;
+    padding: 20px;
+    background-color: burlywood;
+    flex: 1;
+}
+
+aside{
+    
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+
+    
+
+    background-color: burlywood;
+    padding: 20px;
+}
+
+img{
+    border: 1px solid black;
+    width: 45%;
+}
+
+
+footer {
+    text-align: center;
+    background-color: rgb(143, 117, 83);
+}
+
+footer p{
+    padding: 10px;
+    color: white;
+}
