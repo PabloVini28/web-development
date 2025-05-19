@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1abc9c;
+    height: 12vh;
+    text-align: center;
+}
+
+header article{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    color: white;
+
+    font-size: 2vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    width: 100vw;
+    height: 5vh;
+    padding: 1vw;
+}
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+}
+
+nav ul li{
+    
+    list-style: none;
+    font-size: 1vw;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;   
+}
+
+nav ul li:hover{
+    background-color: #ddd;
+}
+
+main{
+    display: flex;
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    background-color: #f1f1f1;
+    height: auto;
+    padding: 1vw;
+    gap: 1vw;
+}
+
+aside article{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+aside article img{
+    background-color: #aaa;
+    height: 13vh;
+    padding: 1vw;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+}
+
+.container article img{
+    background-color: #aaa;
+    display: flex;
+    padding: 1vw;
+    height: 13vh;
+}
+
+.img-secundaria{
+    height: auto;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin: 1vw;
+    background-color: #f1f1f1;
+}
