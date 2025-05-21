@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw;
+    background-color: black;
+    height: 12vh;
+    text-align: center;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header h1{
+    font-size: 3.5vw;
+}
+
+header p{
+    font-size: 2vw;
+}
+
+button{
+    padding: 1vw;
+    background-color: white;
+    border-radius: 2px solid black;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    width: 100vw;
+    height: 5vh;
+    padding: 1vw;
+    position: sticky;   
+    top: 0;
+}
+
+nav ul{
+    display: flex;
+    gap: 2vw;
+}
+
+nav ul li{
+    
+    list-style: none;
+    font-size: 1vw;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;  
+}
+
+nav ul li a:hover{
+    background-color: #ddd;
+    color: #000000;
+}
+
+main{
+    display: flex;
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    background-color: #656565;
+    color: white;
+    height: auto;
+    padding: 1vw;
+    gap: 1vw;
+}
+
+aside article{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 2vw;
+    color: white;
+    background-color: #000000;
+}
+
+.container article{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    font-size: 1.8vh;
+}
+
+.container article section{
+    font-size: 1.8vh;
+}
+
+.container article img{
+    display: flex;
+    height: 20vw;
+    width: 50vw;
+    border: 2px solid white;
+}
+
+.img-secundaria{
+    height: auto;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    background-color: #f1f1f1;
+}

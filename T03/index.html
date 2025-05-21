@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 03</title>
+    <link id="theme-style" rel="stylesheet" href="dark.css">
+</head>
+<body>
+    <header>
+       
+            <h1>Futebol</h1>
+            <p>Como o <strong>Futebol</strong> surgiu no mundo</p>
+            <button onclick="toggle()">MODO CLARO</button>
+        
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="">Link 1</a></li>
+            <li><a href="">Link 2</a></li>
+            <li><a href="">Link 3</a></li>
+            <li><a href="">Link 4</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <aside>
+            <article>
+                <h2>Curiosidades a parte</h2>
+                <p>Primeiras disputas entre times de futebol</p>
+                <img src="futebol_antigamente.jpeg" alt="futebol antigamente">
+                <p>Não se sabe com precisão a data em que o futebol surgiu. Historiadores contam que os ingleses adquiriram o hábito de chutar uma bola de couro, símbolo da cabeça de um membro do exército da Dinamarca, como forma de comemorar a expulsão dos dinamarqueses de seu país ainda no século X</p>
+            </article>
+            <article>
+                <h2>Primeira Bola Oficial</h2>
+                <img src="bolaantiga.png" alt="primeira bola de futebol">
+                <p>A primeira bola de futebol oficial, reconhecida com regras padronizadas, surgiu após a fundação da Football Association (FA) em 1863, na Inglaterra. Com a criação das regras do futebol moderno, também foi necessário padronizar o equipamento utilizado no jogo — especialmente a bola. Essas bolas iniciais eram feitas de couro natural, com tiras costuradas à mão e uma câmara de ar interna de borracha (introduzida mais tarde). O modelo mais conhecido do final do século XIX e início do século XX tinha uma costura visível, semelhante a um laço, que servia para fechar a bola após inserir a bexiga de borracha. Esse laço podia causar desconforto aos jogadores, especialmente ao cabecear.</p>
+            </article>
+        </aside>
+        <div class="container">
+            <article>
+                <h1>SURGIMENTO DO FUTEBOL</h1>
+                <p>Comercial da Nike na Copa do Mundo de 2014</p>
+                <img src="propagandanike.jpg" alt="propaganda da nike">
+                <section>
+                    <h1>Jogos Antigos com Bola</h1>
+                    <p>O futebol tem raízes muito antigas. Civilizações como a <strong>chinesa</strong>, <strong>grega</strong> e <strong>romana</strong> já praticavam jogos com bola há milhares de anos.
+                    Na China, por volta de 2.500 a.C., existia um jogo chamado cuju, em que os jogadores chutavam uma bola de couro tentando acertar um alvo entre duas estacas.
+                    Na <strong>Grécia</strong> e em <strong>Roma</strong>, jogos semelhantes eram usados para treinar soldados e como forma de lazer.</p>
+                </section>
+                <section>
+                    <h1>O Surgimento do Futebol Moderno</h1>
+                    <p>O futebol como conhecemos hoje começou a tomar forma na Inglaterra do século XIX.
+                    Nessa época, escolas e universidades praticavam diferentes versões de jogos com bola, muitas vezes misturando futebol com rugby.
+                    Para unificar as regras, em <strong>1863</strong>, foi criada a <strong>Football Association (FA)</strong> em Londres, e com ela surgiram as primeiras <strong>regras oficiais do futebol moderno</strong>.</p>
+                </section>
+                <section>
+                    <h1>A Expansão Mundial do Esporte</h1>
+                    <p>Com o tempo, o futebol passou a se espalhar para vários países, especialmente com o crescimento do Império Britânico.
+                    A simplicidade do jogo e o pouco equipamento necessário facilitaram sua popularização em diferentes culturas e continentes.</p>
+                </section>
+                <section>
+                    <h1>A Chegada do Futebol ao Brasil</h1>
+                    <p>O futebol chegou ao Brasil em <strong>1894</strong>, trazido por <strong>Charles Miller</strong>, um brasileiro que estudou na Inglaterra.
+                    Ele trouxe bolas, uniformes e conhecimento das regras, organizando as primeiras partidas no país.
+                    Desde então, o esporte cresceu rapidamente e se tornou uma paixão nacional.</p>
+                </section>
+                <section>
+                    <h1>O Futebol Hoje</h1>
+                    <p>Hoje, o futebol é o esporte mais popular do mundo.
+                    Milhões de pessoas jogam e assistem aos jogos, e competições como a <strong>Copa do Mundo</strong> movimentam bilhões de fãs.
+                    Mais do que um esporte, o futebol se tornou um fenômeno cultural que une pessoas de todas as partes do planeta.</p>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <h1>Footer</h1>
+    </footer>
+    <script>
+        let isDark = true;
+
+        function toggle(){
+            const link = document.getElementById('theme-style');
+            const button = document.querySelector('button');
+
+            if(isDark){
+                link.href = 'light.css';
+                button.textContent = 'MODO ESCURO';
+            }
+            else{
+                link.href = 'dark.css'; 
+                button.textContent = 'MODO CLARO';
+            }
+
+            isDark = !isDark;
+        }
+    </script>
+</body>
+</html>
