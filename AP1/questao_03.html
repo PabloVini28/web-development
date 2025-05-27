@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 03 - AP1</title>
+    <style>
+        main{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            gap: 2vh;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        button{
+            padding: 1vw;
+        }
+
+        .buttons{
+            display: flex;
+            gap: 2vw;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Conheça os Pokémons - AP1 - DEV-Web</h1>
+        <img id="url" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg" alt="imagem de um Pokemon">
+        <div class="buttons">
+            <button type="button" onclick="voltar()">VOLTAR -1</button>
+            <button type="button" onclick="avancar()">AVANÇAR +1</button>
+        </div>
+    </main>
+
+    <script>
+        function voltar(){
+            const link = document.getElementById("url");
+            const button = document.querySelector('button')
+
+            let numeroAtual = parseInt(link.src.match(/(\d+)\.svg/)[1]);
+            if (numeroAtual > 1) {
+                numeroAtual--;
+                link.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numeroAtual}.svg`;
+            } else {
+                alert("Você já está no primeiro Pokémon!");
+            }
+        }
+
+        function avancar(){
+            const link = document.getElementById("url");
+            const button = document.querySelector('button')
+
+            let numeroAtual = parseInt(link.src.match(/(\d+)\.svg/)[1]);
+            
+            if (numeroAtual < 100) {
+                numeroAtual++;
+                link.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numeroAtual}.svg`;
+            } else {
+                alert("Você já está no último Pokémon!");
+            }
+        }
+    </script>
+</body>
+</html>
