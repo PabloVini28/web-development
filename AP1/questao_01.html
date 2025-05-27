@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 01 - AP1</title>
+    <style>
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    header{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20vh;
+
+        background-color: gray;
+    }
+    main{
+        display: flex;
+        height: auto;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        padding: 2vw;
+        width: 30vw;
+        border: 2px solid black;
+    }
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li{
+        list-style: none;
+    }
+
+    nav ul li a{
+        text-decoration: none;
+        font-size: 2vh;
+        color: black;
+    }
+
+    nav ul li a:hover{
+        background-color: gray;
+    }
+
+    .container{
+        width: 70vw;
+        height: auto;
+        padding: 2vw;
+        border: 2px solid black;
+    }
+
+    img{
+        display: flex;
+        height: 10vh;
+        width: 10vw;
+        background-color: gray;
+    }
+
+    footer{
+        display:flex;
+        
+        flex-direction: column;
+        align-items: center;
+        background-color: gray;
+    }
+
+    @media (max-width: 400px){
+
+        header{
+            text-align: center;
+        }
+
+        main{
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+        }
+
+        .container{
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+        }
+
+        img{
+            width: 70vw;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Desenvolvimento de Software WEB</h1>
+    </header>
+
+    <main>
+        <nav>
+            <h1>[Menu Lateral]</h1>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <h1>[Conteúdo]</h1>
+            <h1>Introdução ao HTML</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, aperiam hic molestias explicabo nulla dignissimos soluta libero quae nesciunt maxime omnis, non corrupti esse. Minus earum distinctio placeat dolore asperiores!</p>
+            <img src="" alt="image">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero laudantium nesciunt minima sed, omnis consequatur repudiandae aut recusandae placeat natus officiis doloribus facilis, dolorem optio repellat distinctio aliquid amet asperiores?</p>
+            <img src="" alt="image">
+        </div>
+    </main>
+
+    <footer>
+        <a href="">pablo.araujo@alu.ufc.br</a>
+        <p>2025.1</p>
+        <p>Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>
