@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 02 - AP1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        table{
+            border: 2px solid black;
+        }
+
+        table tr{
+            border: 2px solid black;
+        }
+
+        table tr:hover{
+            background-color: #e0f7fa;
+        }
+
+        table tr th{
+            border: 2px solid black;
+            
+            width: 5vw;
+        }
+
+        main{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #first-line{
+            background-color: #f0f0f0;
+        }
+
+        #first-line:hover{
+            background-color: #e0f7fa;
+        }
+
+        #another-line{
+            background-color: #fafafa;
+        }
+
+        #another-line:hover{
+            background-color: #e0f7fa;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <table>
+            <tr id="first-line">
+                <th><strong>Código</strong></th>
+                <th><strong>Nome do Produto</strong></th>
+                <th><strong>Categoria</strong></th>
+                <th><strong>Preço (R$)</strong></th>
+                <th><strong>Estoque</strong></th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <th>Bola de Futebol</th>
+                <th>Esportes</th>
+                <th>20 R$</th>
+                <th>100u</th>
+            </tr>
+            <tr id="another-line">
+                <th>2</th>
+                <th>Tênis</th>
+                <th>Moda</th>
+                <th>100 R$</th>
+                <th>60u</th>
+            </tr>
+            <tr>
+                <th>3</th>
+                <th>Caderno</th>
+                <th>Papelaria</th>
+                <th>10 R$</th>
+                <th>30u</th>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>
