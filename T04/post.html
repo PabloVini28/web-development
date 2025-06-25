@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Aluno</title>
+</head>
+<body>
+    <h1>Adicionar Aluno</h1>
+    <form id="aluno-form">
+        <label>Nome: <input type="text" name="nome" required></label><br>
+        <label>Curso: <input type="text" name="curso" required></label><br>
+        <label>IRA: <input type="text" name="ira" step="0.01" required></label><br>
+        <button type="submit">Adicionar</button>
+    </form>
+    <div id="mensagem"></div>
+    <a href="/index.html">GET</a>
+    <a href="/delete.html">DELETE</a>
+    
+    <script>
+        document.getElementById('aluno-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const aluno = {
+                id: Date.now().toString(),
+                nome: form.nome.value,
+                curso: form.curso.value,
+                ira: parseFloat(form.ira.value)
+            };
+            fetch('http://localhost:3000/alunos', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(aluno)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('mensagem').textContent = 'Aluno adicionado com sucesso!';
+                form.reset();
+            })
+            .catch(error => {
+                document.getElementById('mensagem').textContent = 'Erro ao adicionar aluno!';
+                console.error(error);
+            });
+        });
+    </script>
+</body>

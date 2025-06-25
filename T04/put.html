@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Aluno</title>
+</head>
+<body>
+    <h1>Atualizar Aluno</h1>
+    <form id="put-form">
+        <label>ID do Aluno: <input type="text" name="id" required></label><br>
+        <label>Nome: <input type="text" name="nome" required></label><br>
+        <label>Curso: <input type="text" name="curso" required></label><br>
+        <label>IRA: <input type="number" name="ira" step="0.01" required></label><br>
+        <button type="submit">Atualizar</button>
+    </form>
+    <div id="mensagem"></div>
+    <a href="/index.html">GET</a>
+    <a href="/post.html">POST</a>
+    <a href="/delete.html">DELETE</a>
+    <script>
+        document.getElementById('put-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const id = form.id.value;
+            const aluno = {
+                nome: form.nome.value,
+                curso: form.curso.value,
+                ira: parseFloat(form.ira.value)
+            };
+            fetch(`http://localhost:3000/alunos/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(aluno)
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('mensagem').textContent = 'Aluno atualizado com sucesso!';
+                } else {
+                    return response.json().then(data => {
+                        throw new Error(data.error || 'Erro ao atualizar aluno!');
+                    });
+                }
+            })
+            .catch(error => {
+                document.getElementById('mensagem').textContent = error.message;
+                console.error(error);
+            });
+        });
+    </script>
+</body>
+</html>

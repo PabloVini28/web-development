@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Aluno</title>
+</head>
+<body>
+    <h1>Remover Aluno</h1>
+    <form id="delete-form">
+        <label>ID do Aluno: <input type="text" name="id" required></label><br>
+        <button type="submit">Remover</button>
+    </form>
+    <div id="mensagem"></div>
+    <a href="/index.html">GET</a>
+    <a href="/post.html">POST</a>
+    <a href="/put.html">PUT</a>
+    <script>
+    document.getElementById('delete-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const id = e.target.elements.id.value; // CORRIGIDO AQUI
+        fetch(`http://localhost:3000/alunos/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById('mensagem').textContent = 'Aluno removido com sucesso!';
+            } else {
+                return response.json().then(data => {
+                    throw new Error(data.error || 'Erro ao remover aluno!');
+                });
+            }
+        })
+        .catch(error => {
+            document.getElementById('mensagem').textContent = error.message;
+            console.error(error);
+        });
+    });
+</script>

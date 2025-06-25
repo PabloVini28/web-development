@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dev Web Alunos</title>
+</head>
+<body>
+    <div id="table-container">
+
+    </div>
+    <a href="/post.html">POST</a>
+    <a href="/delete.html">DELETE</a>
+    <a href="/put.html">PUT</a>
+    <script>
+        fetch('http://localhost:3000/alunos')
+            .then(response => response.json())
+            .then(alunos => {
+                const table = document.createElement("table");
+                table.border = "1";
+
+                const thead = table.createTHead();
+                const headerRow = thead.insertRow();
+                ["ID", "Nome", "Curso", "IRA"].forEach(text => {
+                    const th = document.createElement("th");
+                    th.textContent = text;
+                    headerRow.appendChild(th);
+                });
+
+                const tbody = table.createTBody();
+                let somaIRA = 0;
+                alunos.forEach(aluno => {
+                    const row = tbody.insertRow();
+                    row.insertCell().textContent = aluno.id;
+                    row.insertCell().textContent = aluno.nome;
+                    row.insertCell().textContent = aluno.curso;
+                    row.insertCell().textContent = aluno.ira;
+                    somaIRA += aluno.ira;
+                });
+
+                const tfoot = table.createTFoot();
+                const footerRow = tfoot.insertRow();
+                const tdLabel = footerRow.insertCell();
+                tdLabel.colSpan = 3;
+                tdLabel.innerHTML = "<strong>Média dos IRAs</strong>";
+                const tdMedia = footerRow.insertCell();
+                const media = alunos.length ? (somaIRA / alunos.length).toFixed(2) : 0;
+                tdMedia.textContent = media;
+
+                document.getElementById("table-container").appendChild(table);
+            })
+            .catch(error => {
+                alert('Erro ao buscar alunos!');
+                console.error(error);
+            });
+    </script>
+</body>
+</html>
