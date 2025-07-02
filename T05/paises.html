@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>COVID-19 - Países</title>
+    <style>
+        table { border-collapse: collapse; width: 90%; margin: 20px auto; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background: #f2f2f2; }
+        tfoot td { font-weight: bold; background: #e0e0e0; }
+        .brasil { background-color: #ffe066 !important; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">COVID-19 - Países</h2>
+    <table id="covid-paises">
+        <thead>
+            <tr>
+                <th>País</th>
+                <th>Número de Confirmados</th>
+                <th>Número de Mortes</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Média</td>
+                <td id="media-casos"></td>
+                <td id="media-mortes"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        async function carregarPaises() {
+            const response = await fetch('https://covid19-brazil-api.vercel.app/api/report/v1/countries');
+            const data = await response.json();
+            const paises = data.data;
+
+            let somaConfirmados = 0, somaMortes = 0;
+            const tbody = document.querySelector('#covid-paises tbody');
+
+            paises.forEach(pais => {
+                somaConfirmados += pais.confirmed || 0;
+                somaMortes += pais.deaths || 0;
+
+                const tr = document.createElement('tr');
+                if (pais.country.toLowerCase() === 'brazil') {
+                    tr.classList.add('brasil');
+                }
+                tr.innerHTML = `
+                    <td>${pais.country}</td>
+                    <td>${pais.confirmed ?? '-'}</td>
+                    <td>${pais.deaths ?? '-'}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            const totalPaises = paises.length;
+            document.getElementById('media-casos').textContent = Math.round(somaConfirmados / totalPaises);
+            document.getElementById('media-mortes').textContent = Math.round(somaMortes / totalPaises);
+        }
+
+        carregarPaises();
+    </script>
+</body>
+</html>
